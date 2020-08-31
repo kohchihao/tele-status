@@ -46,10 +46,10 @@ inputs:
     default: ${{ github.event.pull_request.body }}
   pr_commit_message:
     description: 'Commit message'
-    default: ${{ github.event.head_commit.message }}
+    default: ${{ github.event.commits[0].message }}
   pr_branch_name:
     description: 'PR Branch name'
-    default: ${{ github.ref }}
+    default: ${{ github.head_ref }}
 runs:
   using: 'node12'
   main: 'dist/index.js'

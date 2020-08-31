@@ -27,7 +27,7 @@ const buildPrContent = () => {
   let message =
     '-------------------------------------\n' +
     `Workflow build <b>${status}!</b>\n` +
-    `Title: ${title}\n` +
+    `Title: ${prTitle}\n` +
     `Branch: ${prBranchName}\n` +
     `User: ${ghActor}\n` +
     '<b>Commit Msg:</b>\n' +
