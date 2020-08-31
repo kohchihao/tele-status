@@ -18,23 +18,15 @@ const {
   GITHUB_SHA: sha,
   GITHUB_WORKFLOW: ghWorkflow,
   INPUT_PR_COMMIT_MESSAGE: prCommitMessage,
-  INPUT_PR_BRANCH_NAME: prBranchName,
-  WORKFLOW_SUCCESS: workflowSuccess,
-  WORKFLOW_FAILURE: workflowFailure,
+  INPUT_PR_BRANCH_NAME: prBranchName
 } = process.env;
 
 const bot = new Bot(tgToken);
 
 const buildPrContent = () => {
-  let buildStatus = 'Unknown';
-  if (workflowSuccess) {
-    buildStatus = 'Success';
-  } else if (workflowFailure) {
-    buildStatus = 'Failure';
-  }
   let message =
     '-------------------------------------\n' +
-    `Workflow build <b>${buildStatus}!</b>\n` +
+    `Workflow build <b>${status}!</b>\n` +
     `Title: ${title}\n` +
     `Branch: ${prBranchName}\n` +
     `User: ${ghActor}\n` +

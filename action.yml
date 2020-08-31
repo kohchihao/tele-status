@@ -50,12 +50,6 @@ inputs:
   pr_branch_name:
     description: 'PR Branch name'
     default: ${{ github.ref }}
-  workflow_success:
-    description: 'Workflow Success'
-    default: ${{ success() }}
-  workflow_failure:
-    description: 'Workflow Failure'
-    default: ${{ failure() }}
 runs:
   using: 'node12'
   main: 'dist/`index.js'
